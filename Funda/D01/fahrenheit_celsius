@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+main()
+{
+  int fahr, celsius;
+  int mini, maxi, intervalle;
+
+  mini = 0;
+  maxi = 300;
+  intervalle = 20;
+
+  fahr = mini;
+  while (fahr <= maxi){
+    celsius = 5 * (fahr-32) / 9;
+    printf("%d\t%d\n", fahr, celsius);
+    fahr = fahr + intervalle; 
+  }
+}
+
+
+/*La boucle while fonctionne de la manière suivante :
+- On évalue la condition entre parenthèses.
+- Si elle est vraie (fahr est inférieur ou égal à maxi), on exécute le corps de la boucle 
+(les 3 instructions entre accolades).
+- Puis on teste de nouveau la condition, si elle est vraie, on exécute le corps de la boucle
+une nouvelle fois.
+- Lorsque la condition devient fausse (fahr est supérieur à maxi), la boucle se termine et l'exécution continue
+au niveau de l'instruction qui suit la boucle.
+*/
+
