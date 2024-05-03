@@ -3,46 +3,55 @@ de trois chiffres différents dans l'ordre croissant - oui, la répétition
 est volontaire.
 */
 
+
+#include <stdlib.h>
+#include <stdio.h>
 #include <unistd.h>
-void	ft_print_int(int a)
-{
-	char *alphabet;
+#include <math.h>
 
-	alphabet = "0123456789";
-	write(1, alphabet + a, 1);
+void    ft_putchar(char c)
+{
+        write (1, &c, 1);
 }
 
-void	ft_print_nums(int a, int b, int c)
+void    ft_print(int i, int j, int k)
 {
-	ft_print_int(a);
-	ft_print_int(b);
-	ft_print_int(c);
+        ft_putchar(i);
+        ft_putchar(j);
+        ft_putchar(k);
+        ft_putchar(',');
+        ft_putchar(' ');
 }
 
-void	ft_print_comb(void)
-{
-	int a;
-	int b;
-	int c;
 
-	a = 0;
-	while (a <= 7)
-	{
-		b = a + 1;
-		while (b <= 8)
-		{
-			c = b + 1;
-			while (c <= 9)
-			{
-				ft_print_nums(a, b, c);
-				if (a != 7 || b != 8 || c != 9)
-				{
-					write(1, ", ", 2);
-				}
-				c += 1;
-			}
-			b += 1;
-		}
-		a += 1;
-	}
+void    ft_print_comb(void)
+{
+        int i;
+        int j;
+        int k;
+
+        i = '0';
+        j = '1';
+        k = '2';
+
+        while (i < ('6' + 1))
+        {
+                while (j < ('7' + 1))
+                {
+                        while (k < ('8' + 1))
+                        {
+                                ft_print( i, j, k);
+                                k++;
+                        }
+                        k = ++j + 1;
+                }
+                j = ++i ;
+        }
 }
+
+int main(int argc, const char *argv[])
+{
+        ft_print_comb();
+        return 0;
+}
+
