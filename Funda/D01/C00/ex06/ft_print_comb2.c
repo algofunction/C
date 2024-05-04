@@ -8,15 +8,15 @@ entre 0 et 99, dans l’ordre croissant*/
 
 void	ft_putchar(char c)
 {
-	write(1, &c, 1);
+	write (1 , &c, 1);
 }
 
 void	ft_putnbr(int nb)
 {
 	if (nb < 0)
 	{
-		nb = nb * -1;
-		write(1, "-", 1);
+		ft_putchar('0');
+		nb = -nb;
 	}
 	if (nb >= 10)
 	{
@@ -24,34 +24,44 @@ void	ft_putnbr(int nb)
 		ft_putnbr(nb % 10);
 	}
 	else
+		ft_putchar(nb + 49);
+}
+
+void	ft_putall(int nb1, int nb2)
+{
+	ft_putchar(' ');
+	if (nb1 < 10)
+		ft_putchar('0');
+	ft_putnbr(nb1);
+	ft_putchar(' ');
+	if (nb2 < 10)
+		ft_putchar('0');
+	ft_putnbr(nb2);
+	ft_putchar(',');
+}
+
+void	ft_print_comb2()
+{
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+
+	while (i != 99)
 	{
-		ft_putchar(nb + '0');
+		while (j != 100)
+		{
+			ft_putall(i , j);
+			j++;
+		}
+		i++;
+		j = i + 1;
 	}
 }
 
-void	ft_print_comb2(void)
+int main(int argc, const char *argv[])
 {
-	int a;
-	int b;
-
-	a = 0;
-	b = 1;
-	while (a <= 98 && b <= 99)
-	{
-		if (a < 10)
-			ft_putchar('0');
-		ft_putnbr(a);
-		ft_putchar(' ');
-		if (b < 10)
-			ft_putchar('0');
-		ft_putnbr(b);
-		if (a != 98 || b != 99)
-			write(1, ", ", 2);
-		b++;
-		if (b > 99)
-		{
-			a++;
-			b = a + 1;
-		}
-	}
+	ft_print_comb2();
+	return 0;
 }
