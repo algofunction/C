@@ -7,30 +7,37 @@ int.
 // Solution
 #include <unistd.h>
 
-void	ft_putnbr(int nb)
+void	ft_putchar(char c)
 {
-	long	nbl;
-	char	c[10];
-	short	i;
-
-	nbl = nb;
-	i = 0;
-	if (0 == nb)
-	{
-		write(1, "0", 1);
-		return ;
-	}
-	if (nbl < 0)
-	{
-		nbl *= -1;
-		write(1, "-", 1);
-	}
-	while (nbl)
-	{
-		c[i++] = (nbl % 10) + 48;
-		nbl /= 10;
-	}
-	while (i > 0)
-		write(1, &c[--i], 1);
+	write (1, &c, 1);
 }
 
+void	ft_putnbr(int nb)
+{
+	if (nb < 0)
+	{
+		nb = -nb;
+	}
+	if (nb >= 10)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
+	else
+		ft_putchar(nb + '0');
+}
+
+int main(int argc, const char *argv[])
+{
+	int i;
+
+	i = -100;
+
+	while (i != 500)
+	{
+		ft_putnbr(i);
+		ft_putchar(' ');
+		i+= 50;
+	}
+	return 0;
+}
