@@ -4,72 +4,28 @@
 n sera tel que : 0 < n < 10.
 */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_putchar(char c)
+void combn(int start, int n, const char* s)
 {
-	write(1, &c, 1);
+  if(n==0){
+      printf("%s\n", s);
+      return;
+  }
+  for(int i=start;i<=9;i++){
+      char s2[11];
+      sprintf(s2, "%s%i",s, i);
+      combn(i+1,n-1, s2);
+  }
 }
 
-void	ft_putout(int nb, int *tab, int pos)
+void ft_print_combn(int n)
 {
-	int i;
-
-	if (pos == 1)
-	{
-		ft_putchar(',');
-		ft_putchar(' ');
-	}
-	i = 0;
-	while (i < nb)
-	{
-		ft_putchar(tab[i] + '0');
-		i++;
-	}
+    if (n>=1 && n<=10)
+      combn(0,n,"");
 }
 
-void	ft_print_combn_increment(int nb, int *tab)
+int main (int argc, char* args[])
 {
-	int i;
-	int max;
-
-	i = nb - 1;
-	max = 9;
-	while (tab[i] == max)
-	{
-		i -= 1;
-		max -= 1;
-	}
-	tab[i] += 1;
-	while (i < nb)
-	{
-		tab[i + 1] = tab[i] + 1;
-		i += 1;
-	}
-}
-
-void	ft_print_combn(int nb)
-{
-	int tab[10];
-	int i;
-
-	i = 0;
-	while (i < nb)
-	{
-		tab[i] = i;
-		i++;
-	}
-	ft_putout(nb, tab, 0);
-	while (tab[0] != 10 - nb || tab[nb - 1] != 9)
-	{
-		if (tab[nb - 1] != 9)
-		{
-			tab[nb - 1] += 1;
-		}
-		else
-		{
-			ft_print_combn_increment(nb, tab);
-		}
-		ft_putout(nb, tab, 1);
-	}
-}
+    ft_print_combn(3);
+}                                                                                                                                                                                                                                                            
