@@ -5,9 +5,20 @@ sur int en paramètre et donne à l’int la valeur de 42.
 */
 
 // Solution
-#include <unistd.h>
 
-void	ft_ft(int *nbr)
+#include <stdio.h>
+
+void	ft_ft(int *p)
 {
-	*nbr = 42 ;
+	*p = 42;
+}
+
+int	main(void)
+{
+	int		n;
+
+	n = 1492;
+	printf("Before-> %d\n", n);
+	ft_ft(&n);
+	printf("After-> %d\n", n);
 }
