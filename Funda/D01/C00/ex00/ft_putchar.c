@@ -11,7 +11,7 @@ void ft_putchar(char c)
         write(1, &c, 1);
 }
 
-int main()
+char main()
 {
         ft_putchar('a');
         ft_putchar('\n');
