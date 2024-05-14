@@ -5,8 +5,6 @@ teur sur pointeur sur pointeur sur pointeur sur pointeur sur pointeur sur int en
 paramètre et donne à l’int la valeur de 42.
 */
 
-
-
 // Solution
 #include <stdio.h>
 
