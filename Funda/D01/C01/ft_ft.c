@@ -15,7 +15,7 @@ void	ft_ft(int *p)
 
 int	main(void)
 {
-	int		n;
+	int n;
 
 	n = 1492;
 	printf("Before-> %d\n", n);
