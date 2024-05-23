@@ -1,5 +1,4 @@
 /*Instructions
-
 Écrire une fonction qui affiche toutes les différentes combinaisons de n chiffres dans l’ordre croissant.
 n sera tel que : 0 < n < 10.*/
 
