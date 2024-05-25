@@ -30,3 +30,4 @@ int             main(void)
         printf("%d\n%d\n", div, mod);
         return (0);
 }
+
