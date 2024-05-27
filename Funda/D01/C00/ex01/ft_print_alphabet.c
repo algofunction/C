@@ -1,5 +1,4 @@
 /*Ecrire une fonction affichant l'alphabet en minuscule sur  une seule ligne */
-
 #include <unistd.h>
 
 void ft_putchar(char c) {
@@ -13,7 +12,6 @@ void ft_print_alphabet(void) {
                 i++;
         }
 }
-
 
 char main(void)
 {
