@@ -9,7 +9,6 @@
  * The strcpy() function is easily misused, buffer overflow issue ->  https://www.youtube.com/watch?v=1S0aBV-Waeo
  * If the destination string of a strcpy() is not large enough, then anything might happen.
 */
-
 //change the size of destBuffer here
 #define BUF_SIZE 111
 
