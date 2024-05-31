@@ -18,4 +18,3 @@ char main()
         putchar('a');
         putchar('\n');
 }
-
