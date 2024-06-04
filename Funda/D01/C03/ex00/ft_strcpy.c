@@ -10,6 +10,8 @@
  * If the destination string of a strcpy() is not large enough, then anything might happen.
 */
 //change the size of destBuffer here
+// Reproduire à l’identique le fonctionnement de la fonction strcpy (man strcpy).
+
 #define BUF_SIZE 111
 
 char	*ft_strcpy(char *dest, char *src)
