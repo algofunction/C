@@ -5,7 +5,7 @@ void    ft_print_numbers(void)
 {
         char    n;
         n = '/';
-        while (++n < ':')
+        while (++n < ':') // before 0 in ascii 
                 write(1, &n, 1);
 }
 
