@@ -9,49 +9,42 @@ est volontaire.
 #include <unistd.h>
 #include <math.h>
 
-void    ft_putchar(char c)
+void    write_n(char v[])
 {
-        write (1, &c, 1);
+        if (v[0] == '7' && v[1] == '8' && v[2] == '9')
+        {
+                write(1, v, 3);
+                write(1, ".\n", 2);
+        }
+        else
+                write(1, v, 5);
 }
-
-void    ft_print(int i, int j, int k)
-{
-        ft_putchar(i);
-        ft_putchar(j);
-        ft_putchar(k);
-        ft_putchar(',');
-        ft_putchar(' ');
-}
-
 
 void    ft_print_comb(void)
 {
-        int i;
-        int j;
-        int k;
+        char    v[5];
 
-        i = '0';
-        j = '1';
-        k = '2';
-
-        while (i < ('6' + 1))
+        v[0] = '0';
+        v[3] = ',';
+        v[4] = ' ';
+        while (v[0] <= '7')
         {
-                while (j < ('7' + 1))
+                v[1] = v[0] + 1;
+                while (v[1] <= '8')
                 {
-                        while (k < ('8' + 1))
+                        v[2] = v[1] + 1;
+                        while (v[2] <= '9')
                         {
-                                ft_print( i, j, k);
-                                k++;
+                                write_n(v);
+                                v[2]++;
                         }
-                        k = ++j + 1;
+                        v[1]++;
                 }
-                j = ++i ;
+                v[0]++;
         }
 }
 
-int main(int argc, const char *argv[])
+int     main(void)
 {
         ft_print_comb();
-        return 0;
 }
-
