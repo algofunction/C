@@ -3,48 +3,37 @@ de trois chiffres différents dans l'ordre croissant - oui, la répétition
 est volontaire.
 */
 
-
-#include <stdlib.h>
-#include <stdio.h>
 #include <unistd.h>
-#include <math.h>
 
-void    write_n(char v[])
+void	ft_print_comb(void)
 {
-        if (v[0] == '7' && v[1] == '8' && v[2] == '9')
-        {
-                write(1, v, 3);
-                write(1, ".\n", 2);
-        }
-        else
-                write(1, v, 5);
+	int	a;
+	int	b;
+	int	c;
+
+	a = '0';
+	while (a <= '7')
+	{
+		b = a + 1;
+		while (b <= '8')
+		{
+			c = b + 1;
+			while (c <= '9')
+			{
+				write(1, &a, 1);
+				write(1, &b, 1);
+				write(1, &c, 1);
+				if (a != '7' || b != '8' || c != '9')
+					write(1, ", ", 2);
+				c++;
+			}
+			b++;
+		}
+		a++;
+	}
 }
 
-void    ft_print_comb(void)
+int main(void)
 {
-        char    v[5];
-
-        v[0] = '0';
-        v[3] = ',';
-        v[4] = ' ';
-        while (v[0] <= '7')
-        {
-                v[1] = v[0] + 1;
-                while (v[1] <= '8')
-                {
-                        v[2] = v[1] + 1;
-                        while (v[2] <= '9')
-                        {
-                                write_n(v);
-                                v[2]++;
-                        }
-                        v[1]++;
-                }
-                v[0]++;
-        }
-}
-
-int     main(void)
-{
-        ft_print_comb();
+	ft_print_comb();
 }
