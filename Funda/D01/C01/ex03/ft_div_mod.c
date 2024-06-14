@@ -7,6 +7,7 @@ Elle stocke le reste de la division de a et b dans l’int pointé par mod.
 */
 
 // Solution
+
 #include <stdio.h>
 
 void    ft_div_mod(int a, int b, int *div, int *mod)
