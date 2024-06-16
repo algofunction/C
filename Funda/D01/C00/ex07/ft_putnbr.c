@@ -1,7 +1,6 @@
 /*Instructions :
 Écrire une fonction qui affiche un nombre passé en paramètre. La fonction devra
-être capable d’afficher la totalité des valeurs possibles dans une variable de type
-int.
+être capable d’afficher la totalité des valeurs possibles dans une variable de type int.
 */
 
 // Solution
