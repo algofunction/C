@@ -1,56 +1,74 @@
 /*Exercice 06 : Écrire une fonction qui affiche toutes les différentes combinaisons de deux nombres entre 0 et 99, dans l’ordre croissant.*/
+
 #include <unistd.h>
 
 void    ft_putchar(char c)
 {
-        write (1 , &c, 1);
+        write(1, &c, 1);
 }
 
-void    ft_putnbr(int nb)
+void    ft_get_number(int i1, int i2, int i[])
 {
-        if (nb < 0)
+        if (i1 >= 10)
         {
-                ft_putchar('0');
-                nb = -nb;
-        }
-        if (nb >= 10)
-        {
-                ft_putnbr(nb / 10);
-                ft_putnbr(nb % 10);
+                i[0] = i1 / 10;
+                i[1] = i1 - 10 * i[0];
         }
         else
-                ft_putchar(nb + 49);
-}
-
-void    ft_putall(int nb1, int nb2)
-{
-        ft_putchar(' ');
-        if (nb1 < 10)
-                ft_putchar('0');
-        ft_putnbr(nb1);
-        ft_putchar(' ');
-        if (nb2 < 10)
-                ft_putchar('0');
-        ft_putnbr(nb2);
-        ft_putchar(',');
-}
-
-void    ft_print_comb2()
-{
-        int i;
-        int j;
-
-        i = 0;
-        j = 0;
-
-        while (i != 99)
         {
-                while (j != 100)
-                {
-                        ft_putall(i , j);
-                        j++;
-                }
-                i++;
-                j = i + 1;
+                i[0] = 0;
+                i[1] = i1;
         }
+        if (i2 >= 10)
+        {
+                i[2] = i2 / 10;
+                i[3] = i2 - 10 * i[2];
+        }
+        else
+        {
+                i[2] = 0;
+                i[3] = i2;
+        }
+}
+
+void    ft_putchar_multiple(int i1, int i2)
+{
+        int i[4];
+
+        ft_get_number(i1, i2, i);
+        ft_putchar(i[0] + 48);
+        ft_putchar(i[1] + 48);
+        ft_putchar(' ');
+        ft_putchar(i[2] + 48);
+        ft_putchar(i[3] + 48);
+        if (i1 != 98 || i2 != 99)
+        {
+                ft_putchar(',');
+                ft_putchar(' ');
+        }
+}
+
+void    ft_print_comb2(void)
+{
+        int i1;
+        int i2;
+
+        i1 = 0;
+        while (i1 <= 98)
+        {
+                i2 = i1 + 1;
+                while (i2 <= 99)
+                {
+                        ft_putchar_multiple(i1, i2);
+                        i2++;
+                }
+                i1++;
+        }
+}
+
+
+int     main(void)
+{
+        ft_print_comb2();
+        return(0);
 }
