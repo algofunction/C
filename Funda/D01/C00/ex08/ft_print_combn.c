@@ -27,4 +27,3 @@ int main (int argc, char* args[])
 {
     ft_print_combn(3);
 }                                                                                                                                                                                                                                                            
-
