@@ -26,4 +26,4 @@ void ft_print_combn(int n)
 int main (int argc, char* args[])
 {
     ft_print_combn(3);
-}                                                                                                                                                                                                                                                            
+}
