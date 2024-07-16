@@ -1,3 +1,5 @@
+#include<unistd.h>
+
 void ft_putchar(char i) {
         write(1, &i, 1);
 }
