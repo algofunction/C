@@ -23,9 +23,7 @@ void    ft_putnbr(int nb)
 int main(int argc, const char *argv[])
 {
         int i;
-
         i = -100;
-
         while (i != 500)
         {
                 ft_putnbr(i);
@@ -34,3 +32,4 @@ int main(int argc, const char *argv[])
         }
         return 0;
 }
+
