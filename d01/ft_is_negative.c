@@ -22,4 +22,3 @@ int main()
         ft_is_negative(4);
         return 0;
 }
-
