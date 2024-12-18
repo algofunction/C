@@ -18,3 +18,10 @@ int main(void)
         ft_print_reverse_alphabet();
         return 0;
 }
+
+
+/*void ft_print_reverse(void){
+        char i = 'z';
+        while(i >= 'a'){}
+        
+}*/
