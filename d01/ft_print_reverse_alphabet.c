@@ -20,8 +20,18 @@ int main(void)
 }
 
 
-/*void ft_print_reverse(void){
+/*
+
+void ft_print_reverse(void){
         char i = 'z';
-        while(i >= 'a'){}
+        while(i >= 'a'){
+        ft_putchar(i);
+        i--;
+}
         
-}*/
+}
+
+int main(void){}
+
+
+*/
