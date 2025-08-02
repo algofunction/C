@@ -6,6 +6,7 @@ int ft_putchar(int n)
     return 0;
 }
 
+
 void ft_is_negative (int n)
 {
     if (n>=0)
@@ -17,6 +18,7 @@ void ft_is_negative (int n)
                 ft_putchar('N');
         }
 }
+
 int main()
 {
         ft_is_negative(4);
